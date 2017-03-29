@@ -2,15 +2,14 @@ import React, {Component} from 'react'
 import config from './config.json'
 import style from './Greeter.css'
 
-import 'antd/lib/radio/style/index.less'
-import Radio from 'antd/lib/radio'
+
+import MyCarousel from './Components/Carousel'
 
 class Greeter extends Component{
     render(){
         return (
             <div className={style.root}>
-                <h1>hello world!</h1>
-                <Radio/>
+                <MyCarousel/>
                 {config.greetText}
             </div>
         )
