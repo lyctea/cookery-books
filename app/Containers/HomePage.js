@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import MyCarousel from '../Components/Carousel'
 import MySearch from '../Components/Search'
-
+import ButtonGroups from '../Components/ButtonGroups'
 
 class HomePage extends Component{
     render (){
@@ -9,6 +9,7 @@ class HomePage extends Component{
             <div style={{width: "100%"}}>
                 <MyCarousel/>
                 <MySearch/>
+                <ButtonGroups/>
             </div>
         )
     }
