@@ -1,9 +1,10 @@
 import React,{ Component } from 'react'
 import HomePage from '../Containers/HomePage'
+import Category from '../Containers/Category'
 import {
     HashRouter as Router,
     Route,
-    Link
+    Link            //点击Link实现跳转
 } from 'react-router-dom'
 
  class Root extends Component{
@@ -13,6 +14,7 @@ import {
                 <div>
                     <Route exact path="/" component={HomePage}/>
                     <Route path="/about" component={About}/>
+                    <Route path="/category" component={Category}/>
                 </div>
             </Router>
         )
