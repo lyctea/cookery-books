@@ -1,6 +1,8 @@
 import React,{ Component } from 'react'
 import HomePage from '../Containers/HomePage'
 import Category from '../Containers/Category'
+import SearchList from '../Containers/SearchList'
+
 import {
     HashRouter as Router,
     Route,
@@ -13,18 +15,12 @@ import {
             <Router>
                 <div>
                     <Route exact path="/" component={HomePage}/>
-                    <Route path="/about" component={About}/>
+                    <Route path="/searchlist" component={SearchList}/>
                     <Route path="/category" component={Category}/>
                 </div>
             </Router>
         )
     }
 }
-
-const About = () => (
-    <div>
-        <h2>About</h2>
-    </div>
-)
 
 export default Root
