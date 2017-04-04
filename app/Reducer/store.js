@@ -1,14 +1,16 @@
 //连接中间件 用于生成项目的唯一store
-import { createStore,combineReducers,applyMiddleware,compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux'
 import * as reducers from '../Reducer/reducers';
-import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk'
+import createLogger from 'redux-logger'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const loggerMiddleware = createLogger()
 
-//将所有的reducer和中间件连接起来， 生产store
-var store = createStore(
-    combineReducers(reducers),
-    composeEnhancers(applyMiddleware(thunk))
-);
+const createStoreWithMiddleware = applyMiddleware(
+    thunkMiddleware,
+    loggerMiddleware
+)(createStore)
 
-export default store;
+export default function configureStore(initiaState) {
+    return createStoreWithMiddleware(reducers,initiaState)
+}
