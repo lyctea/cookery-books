@@ -38,10 +38,10 @@ const data = [
 class MyListView extends Component{
     render(){
         return (
-            <div>
+            <div className="listview">
                 <div className="header">
                     <span>美食推荐</span>
-                    <a href="#"><img style={{width: "60px"}} src={require("../image/more.png")} alt="Category"/></a>
+                    <a href="#"><img src={require("../image/more.png")} alt="Category"/></a>
                 </div>
                 {data.map((d,index) =>
                     <MyListViewCell imgshow={d.img} key={index} title={d.title} des={d.des}/>

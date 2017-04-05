@@ -1,32 +1,41 @@
-.categorycontent{
-  padding-top: 300px;
-}
+.categorycontent {
+  .catelist-left {
+    float: left;
+  }
+  .catelist-left button {
+    display: block;
+    width: 2rem;
+    height: 0.8rem;
+    font-size: 0.3rem;
+    border: none;
+    background-color: rgba(243, 243, 243, 0.6);
+  }
+  .catelist-left button:focus{
+    outline: none;
+    background-color: white;
+  }
+  .catelist-left button:hover{
+    background-color: white;
+  }
+  .catelist-right {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.1rem;
+    margin-left: 2.4rem;
+  }
 
-.catelist-left .list-left-button{
-  display: block;
-  width: 400px;
-  height: 200px;
-  font-size: 50px;
-  border: none;
-  background-color: rgb(243, 243, 243);
-}
-.catelist-left{
-  float: left;
-}
-.catelist-right{
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 15px;
-  margin-left: 470px;
-}
-
-.catelist-right .list-right-button{
-  width: 280px;
-  height: 120px;
-  font-size: 40px;
-  border: none;
-  margin: 40px 20px;
-  border-radius: 80px;
-  background-color: white;
-  border: 3px solid #108ee9;
+  .catelist-right button{
+    width: 2rem;
+    height: 1rem;
+    font-size: 0.3rem;
+    margin: 0.2rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: white;
+    border: 0.03rem solid #108ee9;
+  }
+  .catelist-right button:focus{
+    outline: none;
+    background-color: #c4caff;
+  }
 }

@@ -5,17 +5,15 @@ class SearchListViewCell extends Component{
     render() {
         const {albums,title,ingredients,author} = this.props;
         return (
-            <div className="searchcellcontent">
+            <div className="searchlistviewcell">
                 <div className="pic">
-                    <img className="imgLoad" src={albums} width="400" height="400" style={{display:"block"}}/>
+                    <img src={albums} alt="albums"/>
                 </div>
                 <div className="detail">
-                    <h4><em>{title}</em><span className="cream">精</span></h4>
+                    <h4><em>{title}</em><span>精</span></h4>
                     <p className="subcontent">{ingredients}</p>
                     <p className="author">{author}</p>
-
-                    <div className="clearfix">
-                    </div>
+                    <div className="clearfix"></div>
                 </div>
             </div>
         )

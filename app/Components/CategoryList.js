@@ -18,6 +18,8 @@ class CategoryList extends Component{
 
     //左侧分类button点击事件
     changeCategory(id,e){
+        //回到页面顶部，需要添加缓冲动画
+        window.scrollTo(0,0)
         this.setState({
             selectId: id
         });
@@ -42,14 +44,14 @@ class CategoryList extends Component{
         dataResult = result;
         return (
             <div className="categorycontent">
-                <div className="catelist-left">
+                <div ref="selectButton" className="catelist-left">
                     {dataResult.map((item,index)=>{
-                       return <button ref="listbutton" key={index} className="list-left-button" onClick={this.changeCategory.bind(this,item.parentId)}>{item.name}</button>
+                       return <button ref="listbutton" key={index} onClick={this.changeCategory.bind(this,item.parentId)}>{item.name}</button>
                     })}
                 </div>
                 <div className="catelist-right">
                     {this.state.currentList.map((item,index)=>{
-                        return <button key={index} className="list-right-button" onClick={this.changelist.bind(this,item.id)}>{item.name}</button>
+                        return <button key={index} onClick={this.changelist.bind(this,item.id)}>{item.name}</button>
                     })}
                 </div>
             </div>

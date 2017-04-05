@@ -1,57 +1,75 @@
 .detailcontent{
-  .header img{
-    width: 700px;
-    height: 700px;
+  //顶部导航样式
+  .header-nav{
+    width: 100%;
+    a{
+      float: left;
+      img{
+        width: 1rem;
+      }
+    }
+    span{
+      line-height: 1rem;
+      color: orange;
+      padding-right: 0.5rem;
+    }
   }
-  .header span{
-    display: block;
-    font-size: 55px;
-    padding: 50px 0;
-    font-weight: bold;
-    color: #b9b09a
+  .header {
+    img{
+      width: 100%;
+    }
+    span{
+      display: block;
+      font-size: 0.3rem;
+      padding: 0.1rem 0;
+      font-weight: bold;
+      color: #ff9317
+    }
+    h3{
+      font-size: 0.7rem;
+      padding: .1rem 0 .1rem 0;
+    }
   }
-  .header h3{
-    font-size: 90px;
-    padding: 50px 0 100px 0;
-    color: #8d8525;
-  }
+  //主料
   .ingredients{
     text-align: left;
-    padding-left: 100px;
-  }
-  .ingredients> span:nth-child(1){
-    color: #898517;
-    font-weight: bold;
-  }
-  .ingredients> span:nth-child(2){
-    font-size: 80px;
+    font-size: 0.5rem;
+    padding-left: 0.2rem;
+    span:nth-child(1){
+      font-weight: bold;
+    }
+    span:nth-child(2){
+      font-size: 0.4rem;
+    }
   }
 
+  //辅料
   .burden{
     text-align: left;
-    padding-left: 100px;
-  }
-  .burden> span:nth-child(1){
-    color: #898517;
-    font-weight: bold;
-  }
-  .burden> span:nth-child(2){
-    font-size: 80px;
+    font-size: 0.5rem;
+    padding-left: 0.2rem;
+
+    span:nth-child(1){
+      font-weight: bold;
+    }
+    span:nth-child(2){
+      font-size: 0.4rem;
+    }
   }
 
   .steps{
     border-top: 5px solid goldenrod;
     padding-top: 50px;
     padding-bottom: 200px;
-    margin-top: 100px;
-
-  }
-  .steps h4{
-    text-align: left;
-    font-size: 80px;
-  }
-  .steps img{
-    height: 800px;
-    margin: 0 auto;
+    margin-top: 0.5rem;
+    h4{
+      text-align: left;
+      font-size: 0.5rem;
+      padding: 0 0 0.2rem 0.2rem;
+    }
+    img{
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 }

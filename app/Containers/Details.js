@@ -10,7 +10,7 @@ class Details extends Component{
         return (
             <div className="detailcontent">
                 {/*导航头部*/}
-                <div className="cateheader" >
+                <div className="header-nav" >
                     <a href=""><img src={require("../image/back.png")} alt="back"/></a>
                     <span>★★★★★</span>
                 </div>

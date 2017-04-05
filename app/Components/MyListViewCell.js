@@ -1,19 +1,20 @@
 import React, {Component} from 'react'
-import '../Css/listview.less'
+import '../Css/listviewcell.less'
 
 class MyListViewCell extends Component{
 
     render() {
         const {imgshow, title, des } = this.props;
         return (
-            <div className="list">
-                <div className="list-left">
+            <div className="listviewcell">
+                <div className="left">
                     <img src={imgshow} alt=""/>
                 </div>
-                <div className="list-right">
-                    <span className="list-title">{title}</span>
-                    <span className="list-des">{des}</span>
+                <div className="right">
+                    <span>{title}</span>
+                    <span>{des}</span>
                 </div>
+                <div className="clearfix"></div>
             </div>
         )
     }

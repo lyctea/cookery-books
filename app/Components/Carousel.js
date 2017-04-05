@@ -31,7 +31,7 @@ export default class MyCarousel extends Component{
         return (
             <Carousel autoplay dots infinite selectedIndex={1} className="xxx" style={{ backgroundColor: 'blue', margin: 10 }}>
                 {data.map((d, i) => {
-                    return <Link to="category" key={i}><img style={{ verticalAlign: 'top',margin: "0 auto",width: "100%"}} src={d.img}/></Link>;
+                    return <Link to="" key={i}><img style={{ verticalAlign: 'top',margin: "0 auto",width: "100%"}} src={d.img}/></Link>;
                 })}
             </Carousel>
         )
