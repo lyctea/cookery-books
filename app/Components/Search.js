@@ -8,7 +8,7 @@ class MySearch extends Component{
     render (){
         return (
                <div className="mysearch">
-                   <a href=""><img src={require("../image/search.png")} alt=""/></a>
+                   <a href="#"><img src={require("../image/search.png")} alt=""/></a>
                    <Search type="search" placeholder="搜食谱、菜谱等"
                            onSearch={value => console.log(value)}
                    />
