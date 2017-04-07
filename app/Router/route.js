@@ -4,16 +4,20 @@ import Category from '../Containers/Category'
 import SearchList from '../Containers/SearchList'
 import Details from '../Containers/Details'
 
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory();
+console.log(history);
+
 import {
     HashRouter as Router,
     Route,
-    Link            //点击Link实现跳转
 } from 'react-router-dom'
 
  class Root extends Component{
     render(){
         return (
-            <Router>
+            <Router history={history}>
                 <div>
                     <Route exact path="/" component={HomePage}/>
                     <Route path="/searchlist" component={SearchList}/>

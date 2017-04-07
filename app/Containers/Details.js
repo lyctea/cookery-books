@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import '../Css/details.less'
+
 import data from '../Static/category_search_juhe.json'
 
 var food = data.result.data[0];
-var steps = food.steps;
 
 class Details extends Component{
     render() {
@@ -34,7 +34,7 @@ class Details extends Component{
                 {/*详细步骤*/}
                 <div className="steps">
                     {/*遍历steps数组，返回包含每个步骤的div*/}
-                    {steps.map((item,index)=>{
+                    {food.steps.map((item,index)=>{
                         return <div key={index}>
                             <h4>{item.step}</h4>
                             <img src={item.img} alt="#"/>
@@ -45,5 +45,7 @@ class Details extends Component{
         )
     }
 }
+//详情页需要的参数 albums title ingredients burden steps
+
 
 export default Details

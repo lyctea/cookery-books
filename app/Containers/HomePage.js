@@ -10,6 +10,7 @@ class HomePage extends Component{
     render (){
         return (
             <div className="homepage">
+                {console.log(this.props.history)}
                 <div className="main-content">
                     <MyCarousel/>
                     <MySearch/>

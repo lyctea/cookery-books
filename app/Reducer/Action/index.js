@@ -1,17 +1,18 @@
+
 import fetchJSONP from 'fetch-jsonp'
 
 //已经成功接收到数据，dispatch给组件
 function reveiveMenuInfo(json) {
     return {
-        type: RECEIVEMENU,
+        type: "RECEIVEMENU",
         item: json
     }
 }
-
-//获取菜谱请求，参数是菜谱名
-export default function getMenuRequest(menu){
+//获取菜谱列表请求，参数是菜谱名
+export function getMenuRequest(menu){
+    console.log("menu="+menu);
     return dispatch => {
-        let url = 'http://apis.juhe.cn/cook/query.php?menu=马铃薯&dtype=&pn=&rn=&albums=&key=b4ae59bec17c24bedd0777b26c94ae72';
+        let url = `http://apis.juhe.cn/cook/query.php?menu=${menu}&dtype=&pn=&rn=&albums=&key=b4ae59bec17c24bedd0777b26c94ae72`;
         return fetchJSONP(url,{
             timeout: 20000,
             jsonpCallback: "callback"
