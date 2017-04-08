@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
 import '../Css/details.less'
-
-import data from '../Static/category_search_juhe.json'
-
-var food = data.result.data[0];
+import { connect } from 'react-redux';
 
 class Details extends Component{
     render() {
+        let food = this.props;
+        console.log(this.props);
         return (
             <div className="detailcontent">
                 {/*导航头部*/}
@@ -45,7 +44,10 @@ class Details extends Component{
         )
     }
 }
-//详情页需要的参数 albums title ingredients burden steps
 
+const mapStateToProps = (state) => {
+    let  result  = state.cookeryIdSearchState.result;
+    return result.data[0];
+}
 
-export default Details
+export default connect(mapStateToProps,null)(Details)

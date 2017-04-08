@@ -12,7 +12,7 @@ class Category extends Component{
     render(){
         return (
             <div>
-                <MySearch/>
+                <MySearch history={this.props.history}/>
                 <CategoryList result={resultArr}/>
                 <NavbarButton/>
             </div>

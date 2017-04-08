@@ -2,10 +2,11 @@ import React, {Component} from 'react'
 import '../Css/searchlistviewcell.less'
 
 class SearchListViewCell extends Component{
+
     render() {
-        const {albums,title,ingredients,author} = this.props;
+        const {albums,title,ingredients,author,id} = this.props;
         return (
-            <div className="searchlistviewcell">
+            <div className="searchlistviewcell" onClick={this.props.listClick.bind(this,id)}>
                 <div className="pic">
                     <img src={albums} alt="albums"/>
                 </div>

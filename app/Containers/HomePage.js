@@ -6,14 +6,14 @@ import MyListView from '../Components/ListView'
 import NavbarButton from '../Components/NavbarButton'
 import '../Css/homepage.less'
 
+
 class HomePage extends Component{
     render (){
         return (
             <div className="homepage">
-                {console.log(this.props.history)}
                 <div className="main-content">
                     <MyCarousel/>
-                    <MySearch/>
+                    <MySearch history={this.props.history}/>
                     <ButtonGroups/>
                     <MyListView/>
                 </div>

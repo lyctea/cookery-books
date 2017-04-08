@@ -2,28 +2,32 @@
 import React, {Component} from 'react'
 import SearchListViewCell from '../Components/SearchListViewCell'
 import * as ItemsActions from '../Reducer/Action'
-import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux';
+import store from '../Reducer/store'
 
 
 class SearchListView extends Component{
-
-    componentDidMount(){
-
-    }
-
+    listClick(id,e){
+        e.preventDefault();
+        //拿到子组件的id dispatch action
+        store.dispatch(ItemsActions.getCookeryIdRequest(id));
+        //需要注意的是history需要一级级的传递
+        this.props.history.push("/details");
+    };
     render() {
         let result = this.props;
-        console.log("搜索结果列表"+result);
         return (
             <div>
                 {result.data.map((item,index)=>
-                    <SearchListViewCell key={index}
-                                        albums={item.albums}
-                                        title={item.title}
-                                        ingredients={item.ingredients}
-                                        author="天天小菜谱"/>)
-                }
+                        <SearchListViewCell key={index}
+                                            albums={item.albums}
+                                            title={item.title}
+                                            ingredients={item.ingredients}
+                                            id={item.id}
+                                            author="天天小菜谱"
+                                            listClick={this.listClick}
+                                            history={this.props.history}/>
+                       )}
             </div>
         )
     }
@@ -34,11 +38,9 @@ const mapStateToProps = (state) => {
     return result;
 }
 
-//通过mapDispatchToProps这个方法，把actionCreator变成方法赋值到props，每当调用这个方法，就会更新State
-const mapDispatchToProps = (dispatch) => {
-    return {
-        actions: bindActionCreators(ItemsActions,dispatch)
-    }
-}
+/*
+* 首先mapStateToProps是必须需要的，这是一个把state绑定到组件的props的过程，如果没有这个函数，你的组件怎么接受数据。
+* mapDispatchToProps可要可不要，这是个自动把dispatch绑定到ui组件的过程，不需要每次触发action都得发送一次
+* */
 
-export default connect(mapStateToProps,mapDispatchToProps)(SearchListView)
+export default connect(mapStateToProps,null)(SearchListView)

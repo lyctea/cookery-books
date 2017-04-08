@@ -10,19 +10,19 @@ import { connect } from 'react-redux';
 
 
 class MySearch extends Component{
-    serchMenu(){
-        //this.props.history.push("/searchlist");
-     //   {history.push("/searchlist")}
-        console.log(this.props.history)
+    serchMenu(e){
+        e.preventDefault();
+        this.refs.search.onSearch();
     };
+
     render (){
         return (
                <div className="mysearch">
                    <a href="#" onClick={this.serchMenu.bind(this)}><img src={require("../image/search.png")} alt="#"/></a>
                    <Search ref="search"  placeholder="搜食谱、菜谱等"
-                           onSearch={value => {this.props.actions.getMenuRequest(value)}}
+                           onSearch={value => {this.props.actions.getMenuRequest(value),
+                                                this.props.history.location.pathname == "/searchlist"?"":this.props.history.push("/searchlist")}}
                    />
-
                </div>
         )
     }
