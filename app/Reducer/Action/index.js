@@ -53,8 +53,6 @@ export function getCookeryIdRequest(id) {
 
 //成功接收分类ID请求数据
 function reveiveCategoryInfo(json){
-    console.log("分类成功接收数据")
-    console.log(json)
     return {
         type: "REVEIVECATEGORY",
         item: json
@@ -76,5 +74,19 @@ export function getCategoryIdRequest(id) {
             }).catch(e => {
                 console.log(e)
             })
+    }
+}
+
+export function addLocalList(food) {
+    return {
+        type: "ADD_LOCALLIST",
+        item: food
+    }
+}
+
+export function cancelLocalList(food) {
+    return {
+        type: "CANCEL_LOCALLIST",
+        item: food
     }
 }

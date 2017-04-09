@@ -3,12 +3,27 @@ import '../Css/details.less'
 import { connect } from 'react-redux';
 import NavbarButton from '../Components/NavbarButton'
 
+
 class Details extends Component{
+
+    buttonClick(food,e){
+        console.log(food)
+        if (this.refs.favorite.src == require("../image/favorite_on.png")){
+            this.refs.favorite.src = require("../image/favorite.png");
+            //dispatch 取消收藏
+
+        }else {
+            this.refs.favorite.src = require("../image/favorite_on.png");
+            //dispatch 增加收藏
+
+        }
+    };
+
     render() {
         let food = this.props;
-        console.log(this.props);
         return (
             <div className="detailcontent">
+                <button onClick={this.buttonClick.bind(this,food)}><img ref="favorite" src={require("../image/favorite.png")} alt="favorite"/></button>
                 {/*导航头部*/}
                 <div className="header-nav" >
                     <a href=""><img src={require("../image/back.png")} alt="back"/></a>

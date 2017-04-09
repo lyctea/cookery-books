@@ -24,3 +24,24 @@ export const cookeryIdSearchState = (preState=InitcookeryIdSearchState,action) =
             return preState
     }
 }
+
+export const localListState = (preState=[],action) => {
+    switch (action.type){
+        case "ADD_LOCALLIST": {
+            return objectAssign({},preState,{
+                albums: action.item.albums,
+                title: action.item.title,
+                ingredients: action.item.ingredients,
+                burden: action.item.burden,
+                steps: action.item.steps
+            })
+        }
+        case "CANCEL_LOCALLIST": {
+            //从list中删除food
+
+        }
+        default:
+            return preState;
+    }
+
+}

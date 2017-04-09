@@ -12,7 +12,7 @@ export default class MyCarousel extends Component{
                 link: 'category'
             },
             {
-                img: require("../image/banner2.jpg"),
+                img: require("../image/banner2 .jpg"),
                 link: 'lessonDetail'
             },
             {
@@ -25,6 +25,10 @@ export default class MyCarousel extends Component{
             },
             {
                 img: require("../image/banner5.jpg"),
+                link: 'lessonDetail'
+            },
+            {
+                img: require("../image/banner6.jpg"),
                 link: 'lessonDetail'
             }
         ];
