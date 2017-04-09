@@ -35,7 +35,6 @@ function reveiveIdInfo(json) {
 }
 //通过菜谱ID请求数据，参数名ID
 export function getCookeryIdRequest(id) {
-    console.log("actionID" + id);
     return dispatch => {
         let url = `http://apis.juhe.cn/cook/queryid?id=${id}&dtype=&key=b4ae59bec17c24bedd0777b26c94ae72`;
         return fetchJSONP(url,{
@@ -46,7 +45,34 @@ export function getCookeryIdRequest(id) {
             .then(json => {
                 //成功获取数据，dispatch出去
                 dispatch(reveiveIdInfo(json));
-                console.log(json);
+            }).catch(e => {
+                console.log(e)
+            })
+    }
+}
+
+//成功接收分类ID请求数据
+function reveiveCategoryInfo(json){
+    console.log("分类成功接收数据")
+    console.log(json)
+    return {
+        type: "REVEIVECATEGORY",
+        item: json
+    }
+}
+
+//通过分类ID请求数据，参数是分类ID
+export function getCategoryIdRequest(id) {
+    return dispatch => {
+        let url = `http://apis.juhe.cn/cook/index?cid=${id}&dtype=&pn=&rn=&format=&key=b4ae59bec17c24bedd0777b26c94ae72`;
+        return fetchJSONP(url,{
+            timeout: 20000,
+            jsonpCallback: "callback"
+        })
+            .then(response=>response.json())
+            .then(json => {
+                //成功获取数据，dispatch出去
+                dispatch(reveiveMenulist(json));
             }).catch(e => {
                 console.log(e)
             })

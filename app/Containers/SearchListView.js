@@ -17,14 +17,14 @@ class SearchListView extends Component{
     render() {
         let result = this.props;
         return (
-            <div>
+            <div style={{paddingBottom:"1rem"}}>
                 {result.data.map((item,index)=>
                         <SearchListViewCell key={index}
                                             albums={item.albums}
                                             title={item.title}
                                             ingredients={item.ingredients}
                                             id={item.id}
-                                            author="天天小菜谱"
+                                            target={item.tags}
                                             listClick={this.listClick}
                                             history={this.props.history}/>
                        )}
@@ -35,6 +35,7 @@ class SearchListView extends Component{
 
 const mapStateToProps = (state) => {
     let  result  = state.cookeryBookState.result;
+    console.log(result);
     return result;
 }
 

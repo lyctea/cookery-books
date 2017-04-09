@@ -4,15 +4,15 @@ import '../Css/listviewcell.less'
 class MyListViewCell extends Component{
 
     render() {
-        const {imgshow, title, des } = this.props;
+        const {albums, title, imtro,id } = this.props;
         return (
-            <div className="listviewcell">
+            <div className="listviewcell" onClick={this.props.listViewClick.bind(this,id)}>
                 <div className="left">
-                    <img src={imgshow} alt=""/>
+                    <img src={albums} alt=""/>
                 </div>
                 <div className="right">
                     <span>{title}</span>
-                    <span>{des}</span>
+                    <p>{imtro}</p>
                 </div>
                 <div className="clearfix"></div>
             </div>

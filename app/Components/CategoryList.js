@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import '../Css/categorylist.less'
 import { StorageGetter,StorageSetter} from '../Static/tool'	//浏览器本地存储
-
+import store from '../Reducer/store'
+import * as ItemAcions from '../Reducer/Action'
 
 var dataResult = [];
 var currentList = StorageGetter("currentList");
@@ -19,7 +20,7 @@ class CategoryList extends Component{
     //左侧分类button点击事件
     changeCategory(id,e){
         //回到页面顶部，需要添加缓冲动画
-        window.scrollTo(0,0)
+        window.scrollTo(0,0);
         this.setState({
             selectId: id
         });
@@ -35,8 +36,10 @@ class CategoryList extends Component{
     };
 
     //选择详细分类之后，请求更新数据,并且页面跳转
-    changelist(){
-        console.log("请求更新数据...")
+    changeList(id,e){
+        store.dispatch(ItemAcions.getCategoryIdRequest(id));
+        //路由跳转
+        this.props.history.push("/searchlist");
     };
 
     render() {
@@ -51,7 +54,7 @@ class CategoryList extends Component{
                 </div>
                 <div className="catelist-right">
                     {this.state.currentList.map((item,index)=>{
-                        return <button key={index} onClick={this.changelist.bind(this,item.id)}>{item.name}</button>
+                        return <button key={index} onClick={this.changeList.bind(this,item.id)}>{item.name}</button>
                     })}
                 </div>
             </div>

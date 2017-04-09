@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import '../Css/details.less'
 import { connect } from 'react-redux';
+import NavbarButton from '../Components/NavbarButton'
 
 class Details extends Component{
     render() {
@@ -40,6 +41,7 @@ class Details extends Component{
                         </div>
                     })}
                 </div>
+                <NavbarButton/>
             </div>
         )
     }

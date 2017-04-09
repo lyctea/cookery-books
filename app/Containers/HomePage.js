@@ -15,7 +15,7 @@ class HomePage extends Component{
                     <MyCarousel/>
                     <MySearch history={this.props.history}/>
                     <ButtonGroups/>
-                    <MyListView/>
+                    <MyListView history={this.props.history}/>
                 </div>
                 <NavbarButton/>
             </div>

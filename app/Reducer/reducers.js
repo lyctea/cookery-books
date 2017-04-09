@@ -24,4 +24,3 @@ export const cookeryIdSearchState = (preState=InitcookeryIdSearchState,action) =
             return preState
     }
 }
-

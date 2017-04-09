@@ -9,8 +9,8 @@
   }
   .detail {
     padding-left: 3.5rem;
-    p{
-      padding: 0.2rem 0;
+    .subcontent{
+      padding-bottom: 0.2rem;
     }
   }
   .detail h4{
@@ -24,15 +24,21 @@
       padding-left: 0.2rem;
       color: orange;
     }
+
   }
 
   .subcontent{
-    font-size: 0.4rem;
+    font-size: 0.35rem;
     text-align: left;
   }
-  .author{
-    font-size: 0.4rem;
+  .target{
+    font-size: 0.3rem;
     text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-indent: hanging;
   }
   .clearfix{
     clear: both;
