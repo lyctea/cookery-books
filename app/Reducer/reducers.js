@@ -43,5 +43,14 @@ export const localListState = (preState=[],action) => {
         default:
             return preState;
     }
+}
 
+export const externalUrlStete = (pre={},action) => {
+    switch (action.type){
+        case "ExternalUrl":{
+            return action.item;
+        }
+        default:
+            return pre;
+    }
 }

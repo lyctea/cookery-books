@@ -90,3 +90,10 @@ export function cancelLocalList(food) {
         item: food
     }
 }
+
+export function externalUrl(url) {
+    return {
+        type: "ExternalUrl",
+        item: {url: url}
+    }
+}

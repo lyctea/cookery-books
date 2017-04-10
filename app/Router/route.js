@@ -3,6 +3,7 @@ import HomePage from '../Containers/HomePage'
 import Category from '../Containers/Category'
 import SearchList from '../Containers/SearchList'
 import Details from '../Containers/Details'
+import MeiShiQuan from '../Components/External'
 
 import createBrowserHistory from 'history/createBrowserHistory'
 
@@ -10,7 +11,7 @@ const history = createBrowserHistory();
 
 import {
     HashRouter as Router,
-    Route,
+    Route
 } from 'react-router-dom'
 
 const Root = ()=> (
@@ -20,6 +21,7 @@ const Root = ()=> (
             <Route path="/searchlist" component={SearchList}/>
             <Route path="/category" component={Category}/>
             <Route path="/details" component={Details}/>
+            <Route path="/external" component={MeiShiQuan}/>
         </div>
     </Router>)
 
