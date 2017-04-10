@@ -38,9 +38,9 @@ class NavbarButton extends Component{
 
 
                     <li className="nav-button">
-                        <a href="#">
+                        <Link to="/message">
                             <img src={require("../image/消息.png")} alt="news"/>
-                        </a>
+                        </Link>
                         <span>消息</span>
                     </li>
 
@@ -51,8 +51,6 @@ class NavbarButton extends Component{
                         </a>
                         <span>我的</span>
                     </li>
-
-
                 </ul>
             </div>
         )

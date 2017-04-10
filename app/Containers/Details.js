@@ -24,13 +24,7 @@ class Details extends Component{
         return (
             <div className="detailcontent">
                 <button onClick={this.buttonClick.bind(this,food)}><img ref="favorite" src={require("../image/favorite.png")} alt="favorite"/></button>
-                {/*导航头部*/}
-                <div className="header-nav" >
-                    <a href=""><img src={require("../image/back.png")} alt="back"/></a>
-                    <span>★★★★★</span>
-                </div>
 
-                {/*头部标题关注*/}
                 <div className="header">
                     <img src={food.albums} alt="albums"/>
                     <div>
@@ -39,16 +33,15 @@ class Details extends Component{
                         <span>65461 · 收藏</span>
                     </div>
                 </div>
-                {/*食材配料*/}
+
                 <div className="ingredients">
                     <span>主料:</span><span>{food.ingredients}</span>
                 </div>
                 <div className="burden">
                     <span>辅料:</span><span>{food.burden}</span>
                 </div>
-                {/*详细步骤*/}
+
                 <div className="steps">
-                    {/*遍历steps数组，返回包含每个步骤的div*/}
                     {food.steps.map((item,index)=>{
                         return <div key={index}>
                             <h4>{item.step}</h4>
