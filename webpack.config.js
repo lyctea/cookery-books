@@ -55,11 +55,16 @@ module.exports = {
                 }, {
                     loader: "css-loader"
                 }, {
-                    loader: "less-loader", options: {
-                        strictMath: true,
-                        noIeCompat: true
-                    }
+                    loader: "less-loader"
                 }]
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-sprite?' + JSON.stringify({
+                    name: '[name]_[hash]',
+                    prefixize: true,
+                    spriteModule: 'utils/my-custom-sprite'
+                })
             }
         ]
     },
@@ -78,7 +83,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.tmpl.html"  //new 一个这个插件的实例，并传入相关的参数
         }),
-        new ExtractTextPlugin("[name]-[hash].css")
+        new ExtractTextPlugin("[name]-[hash].css"),
+        new webpack.ProvidePlugin({         //引入jquery
+            $:"jquery",
+            jQuery:"jquery",
+            "window.jQuery":"jquery"
+        })
     ],
 
 }

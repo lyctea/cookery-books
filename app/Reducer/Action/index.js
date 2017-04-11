@@ -97,3 +97,28 @@ export function externalUrl(url) {
         item: {url: url}
     }
 }
+
+//请求指定页码的消息数据
+
+function reveivePageMessage(json) {
+    return {
+        type: "REVEIVEPAGEMSG",
+        item: json
+    }
+}
+
+
+export function getPageMessageRequest(page,one_page_num) {
+    return dispatch => {
+        let url = `https://api.tianapi.com/wxnew/?key=8bbcbfba99ec693c573d5d27e28ac63a&num=${one_page_num}&page=${page}&word=美食`;
+        $.ajax({
+            type:"GET",
+            url: url,
+            dataType:"json",
+            success:function(json){
+                dispatch(reveivePageMessage(json));
+            }
+        })
+        return false;
+    }
+}
