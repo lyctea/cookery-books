@@ -20,8 +20,10 @@ class MySearch extends Component{
                <div className="mysearch">
                    <a href="#" onClick={this.serchMenu.bind(this)}><img src={require("../image/search.png")} alt="#"/></a>
                    <Search ref="search"  placeholder="搜食谱、菜谱等"
-                           onSearch={value => {this.props.actions.getMenuRequest(value),
-                                                this.props.history.location.pathname == "/searchlist"?"":this.props.history.push("/searchlist")}}
+                           onSearch={value => {
+                               if (value == "")alert("请输入食谱、菜谱等");return;
+                               this.props.actions.getMenuRequest(value),
+                               this.props.history.location.pathname == "/searchlist"?"":this.props.history.push("/searchlist")}}
                    />
                </div>
         )

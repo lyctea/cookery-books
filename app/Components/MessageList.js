@@ -21,7 +21,7 @@ class MessageList extends Component{
     };
 
     render() {
-        var {data} = this.props;
+        let {data} = this.props;
         return (
             <div style={listStyle}>
                 {data.newslist.map((item,index)=>

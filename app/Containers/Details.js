@@ -2,36 +2,61 @@ import React, {Component} from 'react'
 import '../Css/details.less'
 import { connect } from 'react-redux';
 import NavbarButton from '../Components/NavbarButton'
-
+import { StorageGetter,StorageSetter} from '../Static/tool'
 
 class Details extends Component{
 
     buttonClick(food,e){
-        console.log(food)
+        e.preventDefault();
+
         if (this.refs.favorite.src == require("../image/favorite_on.png")){
             this.refs.favorite.src = require("../image/favorite.png");
-            //dispatch 取消收藏
-
+            //取消收藏 删除所有重复的food
+            var localArr = StorageGetter("locallist");
+            for (let i=0;i<localArr.length;i++){
+                if (localArr[i].id == food.id){
+                    localArr.splice(i,1);
+                }
+            }
+            StorageSetter("locallist",localArr);
         }else {
             this.refs.favorite.src = require("../image/favorite_on.png");
-            //dispatch 增加收藏
-
+            //增加收藏 先删除所有重复的food 在push新的food
+            var localArr = StorageGetter("locallist");
+            for (let i=0;i<localArr.length;i++){
+                if (localArr[i].id == food.id){
+                    localArr.splice(i,1);
+                }
+            }
+            localArr.push(food);
+            StorageSetter("locallist",localArr);
         }
     };
 
     render() {
         let food = this.props;
+        var favIconUrl = require("../image/favorite.png");
+        //判断是否已经被收藏
+        var localList = StorageGetter("locallist");
+        for (let i=0;i<localList.length;i++){
+            if(localList[i].id == food.id){
+                //在收藏列表里面有这个菜谱，则收藏图标点亮
+                favIconUrl = require("../image/favorite_on.png");
+            }
+        }
+
         return (
             <div className="detailcontent">
-                <button onClick={this.buttonClick.bind(this,food)}><img ref="favorite" src={require("../image/favorite.png")} alt="favorite"/></button>
 
                 <div className="header">
                     <img src={food.albums} alt="albums"/>
-                    <div>
-                        <h3>{food.title}</h3>
-                        <span>2546454 · 浏览</span>
-                        <span>65461 · 收藏</span>
-                    </div>
+                    <h3>{food.title}</h3>
+                    <button onClick={this.buttonClick.bind(this,food)}>
+                        <img ref="favorite" src={favIconUrl} alt="favorite"/>
+                        <h5>收藏</h5>
+                    </button>
+                    <span>2546454 · 浏览</span>
+                    <span>65461 · 收藏</span>
                 </div>
 
                 <div className="ingredients">

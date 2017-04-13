@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import data from '../Static/category_juhe.json'
 import CategoryList from '../Components/CategoryList'
-import MySearch from '../Components/Search'
+import MySearch from '../Components/SearchBar'
 import NavbarButton from '../Components/NavbarButton'
 
 class Category extends Component{

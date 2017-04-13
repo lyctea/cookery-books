@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Webpack Sample Project</title>
-<link href="main-be35e3d76a684084ae38.css" rel="stylesheet"><link href="main.3eed18ef215095c7669a04c892b747f9.css" rel="stylesheet"></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale =1, user-scalable=no" />
+    <title>天天菜谱</title>
+<link href="main-20f00634fa995b38aaf6.css" rel="stylesheet"><link href="main.2ccac5851b492e31af9a02966697eac0.css" rel="stylesheet"></head>
 <body>
-<div id='root'>
-</div>
+    <script>
+        (function () {document.addEventListener('DOMContentLoaded', function () {
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.68 + 'px';
+            // 等价于html.style.fontSize = windowWidth / 768 * 100 + 'px';
+            // 这个7.68就是根据设计稿的横向宽度来确定的，假如你的设计稿是750
+        }, false);
+        })();
+    </script>
+    <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+    <script>
+        if ('addEventListener' in document) {
+            window.addEventListener('load', function() {
+                FastClick.attach(document.body);
+            }, false);
+        }
+    </script>
+    <div id='root'></div>
 <script type="text/javascript" src="bundle.js"></script></body>
 </html>

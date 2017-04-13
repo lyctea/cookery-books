@@ -5,6 +5,8 @@ import SearchList from '../Containers/SearchList'
 import Details from '../Containers/Details'
 import MeiShiQuan from '../Components/External'
 import Message from '../Containers/Message'
+import MyCollect from '../Containers/Collect'
+
 
 import createBrowserHistory from 'history/createBrowserHistory'
 
@@ -24,6 +26,7 @@ const Root = ()=> (
             <Route path="/details" component={Details}/>
             <Route path="/external" component={MeiShiQuan}/>
             <Route path="/message" component={Message}/>
+            <Route path="/collect" component={MyCollect}/>
         </div>
     </Router>)
 

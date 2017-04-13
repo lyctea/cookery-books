@@ -35,7 +35,6 @@ class SearchListView extends Component{
 
 const mapStateToProps = (state) => {
     let  result  = state.cookeryBookState.result;
-    console.log(result);
     return result;
 }
 

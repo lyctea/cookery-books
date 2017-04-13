@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import MyCarousel from '../Components/Carousel'
-import MySearch from '../Components/Search'
+import MySearch from '../Components/SearchBar'
 import ButtonGroups from '../Components/ButtonGroups'
 import MyListView from '../Components/ListView'
 import NavbarButton from '../Components/NavbarButton'

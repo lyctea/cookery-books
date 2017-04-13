@@ -4,11 +4,10 @@ import '../Css/listview.less'
 import data from '../Static/listViewData.json'
 import store from '../Reducer/store'
 import * as ItemsActions from '../Reducer/Action'
+import {Link} from 'react-router-dom'
 
 class MyListView extends Component{
     listViewClick(id,e){
-      console.log("click");
-      console.log(id);
       store.dispatch(ItemsActions.getCookeryIdRequest(id));
       this.props.history.push("/details");
     };
@@ -17,7 +16,7 @@ class MyListView extends Component{
             <div className="listview">
                 <div className="header">
                     <span>春季推荐</span>
-                    <a href="#"><img src={require("../image/more.png")} alt="Category"/></a>
+                    <Link to="/searchlist"><img src={require("../image/more.png")} alt="Category"/></Link>
                 </div>
                 {data.result.data.map((d,index) =>
                     <MyListViewCell albums={d.albums}

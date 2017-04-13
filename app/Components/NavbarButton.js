@@ -46,10 +46,10 @@ class NavbarButton extends Component{
 
 
                     <li className="nav-button">
-                        <a href="#">
+                        <Link to="/collect">
                             <img src={require("../image/我.png")} alt="myself"/>
-                        </a>
-                        <span>我的</span>
+                        </Link>
+                        <span>收藏夹</span>
                     </li>
                 </ul>
             </div>

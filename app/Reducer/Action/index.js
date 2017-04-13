@@ -77,20 +77,6 @@ export function getCategoryIdRequest(id) {
     }
 }
 
-export function addLocalList(food) {
-    return {
-        type: "ADD_LOCALLIST",
-        item: food
-    }
-}
-
-export function cancelLocalList(food) {
-    return {
-        type: "CANCEL_LOCALLIST",
-        item: food
-    }
-}
-
 export function externalUrl(url) {
     return {
         type: "ExternalUrl",
