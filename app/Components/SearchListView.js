@@ -1,6 +1,6 @@
 //菜谱搜索结果列表  cell组件只需要传入几个参数就能自动刷新了
 import React, {Component} from 'react'
-import SearchListViewCell from '../Components/SearchListViewCell'
+import SearchListViewCell from './SearchListViewCell'
 import * as ItemsActions from '../Reducer/Action'
 import { connect } from 'react-redux';
 import store from '../Reducer/store'

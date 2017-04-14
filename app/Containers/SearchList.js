@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import MySearch from '../Components/SearchBar'
-import SearchListView from '../Containers/SearchListView'
+import SearchListView from '../Components/SearchListView'
 import NavbarButton from '../Components/NavbarButton'
 
 class SearchList extends Component{
